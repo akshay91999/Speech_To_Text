@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static',filename='base.css')}}">
+        <script src="{{url_for('static',filename='filenamejavascript.js')}}"></script>
+    </head>
+    <body>
+        <h1>Speech To Text Transcription</h1>
+        <div class="speech">
+        <h3>please select the audio file to transcribe</h3>
+        <form action="/success" method="post" enctype="multipart/form-data">
+        <div
+        class="upload-btn-wrapper">
+        <label for="audio" class="drop-container">
+        <span class="drop-title">Drop files here</span>
+        then
+        <input class="file" id='fileinput' type="file" name="file" onchange="selected_file()">
+        <input class="btn" type="submit" value="Upload">
+    </label>
+        </div>
+    
+        <p id="filename"> </p>
+        <audio controls>
+            <source src="{{audio}}">
+        </audio>
+        <p>{{text}}</p>
+    </form>
+    </div>
+    </body>
+</html>
